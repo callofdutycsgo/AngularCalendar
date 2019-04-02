@@ -1,0 +1,24 @@
+<ngb-accordion #acc="ngbAccordion">
+  <ngb-panel id="toggle-1" title="MONTH">
+    <ng-template ngbPanelContent>
+      <mwl-calendar-month-view [viewDate]="viewDate" [events]="events" [refresh]="refresh"
+        [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)"
+        (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-month-view>
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="toggle-2" title="WEEK">
+    <ng-template ngbPanelContent>
+      <mwl-calendar-week-view [viewDate]="viewDate" [events]="events" [refresh]="refresh"
+        (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-week-view>
+    </ng-template>
+  </ngb-panel>
+  <ngb-panel id="toggle-3" title="DAY">
+    <ng-template ngbPanelContent>
+      <mwl-calendar-day-view [viewDate]="viewDate" [events]="events" [refresh]="refresh"
+        (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+      </mwl-calendar-day-view>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
